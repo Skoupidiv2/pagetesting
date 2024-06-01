@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <div id="maindiv">
+        <h1 id="title">login</h1>
+        <input id="box1" placeholder="Username" type="text">
+        <p id="hint1">Username contains less than 6 Characters</p>
+        <input id="box2" placeholder="Password" type="text">
+        <p id="hint2">Password contains less than 8 Characters</p>
+        <button id="btn1">Login</button>
+    </div>
+</body>
+<style>
+    body{
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        background-color: #2c2c2c;
+        color: white;
+        font-family: sans-serif;
+        }
+        #hint1,#hint2{
+            margin: 0px;
+            margin-top: -5px;
+            margin-left: 20px;
+            font-size: 12px;
+            color: red;
+            visibility: hidden;
+        }
+    #box1,#box2{
+        display: block;
+        margin: 5px;
+        height: 30px;
+        width: 190px;
+        padding: 3px;
+        outline: none;
+        border: 2px solid black;
+        margin-left: 20px;
+    }
+    #btn1{
+        background-color: black;
+        color: white;
+        width: 40%; 
+        height: 22%;
+        margin-top: 6px;
+        font-weight: bold;
+        font-size: medium;
+        border-radius: 4px;
+        outline: none;
+        border: 1px solid black;
+    }
+    #title{
+        margin-bottom: 10px;
+    }
+</style>
+<script>
+    let box1 = document.getElementById("box1");
+    let box2 = document.getElementById("box2");
+    let btn = document.getElementById("btn1");
+
+    btn.onclick = function() {
+        if (box1.value.length < 6) {
+            document.getElementById("hint1").style.visibility = "visible";
+            setTimeout(function() {
+                document.getElementById("hint1").style.visibility = "hidden";
+            }, 3000);
+        } else if (box2.value.length < 8) { 
+            document.getElementById("hint2").style.visibility = "visible";
+            setTimeout(function() {
+                document.getElementById("hint2").style.visibility = "hidden";
+            }, 3000);
+        }
+        else{
+            window.location.href="https://www.youtube.com/"
+        }
+    };
+</script>
+
+</html>
